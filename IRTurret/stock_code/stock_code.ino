@@ -246,8 +246,8 @@ void rightMove(int moves){ // function to move right
 
 void upMove(int moves){
   for (int i = 0; i < moves; i++){
-      if(pitchServoVal > pitchMin){//make sure the servo is within rotation limits (greater than 10 degrees by default)
-        pitchServoVal = pitchServoVal - pitchMoveSpeed; //decrement the current angle and update
+        if(pitchServoVal < pitchMax){ //make sure the servo is within rotation limits (less than 175 degrees by default)
+        pitchServoVal = pitchServoVal + pitchMoveSpeed;//increment the current angle and update
         pitchServo.write(pitchServoVal);
         delay(50);
         Serial.println("UP");
@@ -257,8 +257,8 @@ void upMove(int moves){
 
 void downMove (int moves){
   for (int i = 0; i < moves; i++){
-        if(pitchServoVal < pitchMax){ //make sure the servo is within rotation limits (less than 175 degrees by default)
-        pitchServoVal = pitchServoVal + pitchMoveSpeed;//increment the current angle and update
+      if(pitchServoVal > pitchMin){//make sure the servo is within rotation limits (greater than 10 degrees by default)
+        pitchServoVal = pitchServoVal - pitchMoveSpeed; //decrement the current angle and update
         pitchServo.write(pitchServoVal);
         delay(50);
         Serial.println("DOWN");
