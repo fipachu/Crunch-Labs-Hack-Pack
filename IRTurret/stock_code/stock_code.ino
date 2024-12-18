@@ -26,9 +26,9 @@
   ************************************************************************************
 */
 
-//////////////////////////////////////////////////
+/////////////////
 //  LIBRARIES  //
-//////////////////////////////////////////////////
+/////////////////
 #include <Arduino.h>
 #include <Servo.h>
 #include "PinDefinitionsAndMore.h"  // Define macros for input and output pin etc.
@@ -65,9 +65,9 @@
 #define star 0x16
 #define hashtag 0xD
 
-//////////////////////////////////////////////////
+///////////////////////////
 //  PINS AND PARAMETERS  //
-//////////////////////////////////////////////////
+///////////////////////////
 //this is where we store global variables!
 Servo yawServo;    //names the servo responsible for YAW rotation, 360 spin around the base
 Servo pitchServo;  //names the servo responsible for PITCH rotation, up and down tilt
@@ -90,9 +90,9 @@ int pitchMax = 175;  // this sets the maximum angle of the pitch servo to preven
 int pitchMin = 10;   // this sets the minimum angle of the pitch servo to prevent it from crashing, it should remain above 0, and be less than the pitchMax
 
 
-//////////////////////////////////////////////////
+/////////////////
 //  S E T U P  //
-//////////////////////////////////////////////////
+/////////////////
 void setup() {
   Serial.begin(9600);  // initializes the Serial communication between the computer and the microcontroller
 
@@ -114,10 +114,9 @@ void setup() {
   homeServos();  //set servo motors to home position
 }
 
-////////////////////////////////////////////////
+///////////////
 //  L O O P  //
-////////////////////////////////////////////////
-
+///////////////
 void loop() {
 
   /*
